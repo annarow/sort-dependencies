@@ -35,3 +35,7 @@ vector<int> *DirectedGraph::topologySort() {
 	return new vector<int>();
 }
 
+void DirectedGraph::topologySort(int val, LinkedStack<int> &, set<int> &){
+
+}
+

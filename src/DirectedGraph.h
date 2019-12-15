@@ -24,6 +24,8 @@ private:
 
     void topologySort(int val, LinkedStack<int> &, set<int> &);
 
+    bool contains(set<int> & search_set, int val);
+
 public:
     explicit DirectedGraph(Edge *edges, int size);
 
@@ -32,6 +34,8 @@ public:
     virtual ~DirectedGraph();
 
     vector<int> *topologySort();
+
+    vector<int> orderedNodes;
 };
 
 #endif //STACK_DIRECTEDGRAPH_H

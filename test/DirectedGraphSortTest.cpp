@@ -19,8 +19,8 @@ TEST(topology_sort, test_8_nodes){
             };
     DirectedGraph graph(edges, sizeof(edges)/sizeof(edges[0]));
     auto v = graph.topologySort();
-    vector<int> ans{7, 6, 5, 4, 3, 2, 1};
-    ASSERT_TRUE((*v) == ans);
+    vector<int> ans{7, 6, 5, 4, 3, 2, 1, 0};
+    ASSERT_TRUE((graph.orderedNodes) == ans);
 }
 
 TEST(topology_sort, test_5_nodes) {
@@ -36,7 +36,7 @@ TEST(topology_sort, test_5_nodes) {
     vector<int> ans1{0, 1, 3, 2, 4,};
     vector<int> ans2{0, 1, 2, 3, 4,};
 
-    ASSERT_TRUE((*v)==ans1 || (*v)==ans2);
+    ASSERT_TRUE((graph.orderedNodes)==ans1 || (graph.orderedNodes)==ans2);
 
     delete v;
 }
@@ -52,7 +52,7 @@ TEST(topology_sort, test_2_nodes) {
     auto v = graph.topologySort();
     vector<int> ans{1, 0};
 
-    ASSERT_TRUE((*v)==ans);
+    ASSERT_TRUE((graph.orderedNodes)==ans);
 
     delete v;
 }
